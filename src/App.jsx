@@ -1,10 +1,31 @@
-import './App.css'
-
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './components/HomePage';
+import AboutPage from './components/AboutPage';
+import ProjectShowcase from './components/ProjectShowcase';
+import BlogSection from './components/BlogSection';
+import BlogPost from './components/BlogPost';
+import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">HI!</h1>
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={
+          <main>
+            <HomePage />
+            <AboutPage />
+            <ProjectShowcase />
+            <BlogSection />
+          </main>
+        } />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
