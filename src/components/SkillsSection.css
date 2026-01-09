@@ -1,0 +1,139 @@
+.skills-section {
+  min-height: 100vh;
+  color: white;
+  padding: 100px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 40%, rgba(139, 69, 255, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.skills-container {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.skills-label {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.skills-title {
+  font-size: 4rem;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.1;
+  font-family: 'Times New Roman', serif;
+}
+
+.bring-text {
+  color: white;
+}
+
+.table-text {
+  background: linear-gradient(135deg, #8b45ff 0%, #ec4899 50%, #3b82f6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+
+/* plate wrapper centers and sizes the plate image */
+.plate-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* individual images positioned around the plate */
+.plate-image {
+  width: 100%;
+  max-width: 800px;
+}
+
+.cup-image {
+  width : 100%;
+  max-width: 177px;
+  position: absolute;
+  top: 60px;
+  left: 310px;
+  transform: rotate(30deg);
+}
+
+.chocolate-image {
+  width: auto;
+  max-width: 173px;
+  position: absolute;
+  bottom: 100px;
+  left: 150px;
+  transform: rotate(-20deg);
+}
+
+.airpods-image {
+  width: auto;
+  max-width: 125px;
+  position: absolute;
+  top: 100px;
+  right: 90px;
+  transform: rotate(270deg);
+}
+
+.calculator-image {
+  width: auto;
+  max-width: 190px;
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  transform: rotate(20deg);
+}
+
+.glasses-image {
+  width: auto;
+  max-width: 160px;
+  position: absolute;
+  top: 170px;
+  right: 250px;
+  transform: rotate(-30deg);
+}
+
+.sticky-image {
+  width: auto;
+  max-width: 130px;
+  position: absolute;
+  top: 120px;
+  left: 30px;
+  transform: rotate(-15deg);
+}
+
+.dice-image {
+  width: auto;
+  max-width: 70px;
+  position: absolute;
+  bottom: 70px;
+  right: 320px;
+}

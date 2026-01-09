@@ -1,0 +1,393 @@
+.blog-section {
+  min-height: 100vh;
+  padding: 6rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+/* Header */
+.blog-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.blog-title {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.01em;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #a855f7 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+/* Blog Cards Grid */
+.blog-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Blog Card */
+.blog-card {
+  background: rgba(25, 25, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  animation: cardAppear 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Icons Section */
+.card-icons-section {
+  display: flex;
+  gap: 0.75rem;
+  padding: 2rem 2rem 1rem;
+  justify-content: flex-start;
+  flex-wrap: wrap; /* allow distribution and wrapping */
+}
+
+.icon-box {
+  width: 64px;
+  height: 64px;
+  background: rgba(40, 40, 50, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  transition: transform 200ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms, background 220ms;
+  will-change: transform, background;
+}
+
+/* lift + rotate on hover for a lively feel */
+.icon-box:hover {
+  transform: translateY(-10px) rotate(-4deg) scale(1.04);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.45);
+}
+
+/* pressed/touch state */
+.icon-box.pressed {
+  transform: translateY(4px) scale(0.96) rotate(0deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+/* ensure SVGs inside icon-box fit and stay visible */
+.icon-box svg {
+  width: 34px;
+  height: 34px;
+  color: #ffffff;
+  display: block;
+  opacity: 0.98;
+}
+
+/* per-icon accents */
+.icon-box.vscode { background: linear-gradient(135deg,#007ACC 0%, #00A7D6 100%); border-color: rgba(0,122,204,0.25); }
+.icon-box.github { background: linear-gradient(135deg,#111111 0%, #2b2b2b 100%); border-color: rgba(255,255,255,0.06); }
+.icon-box.terminal { background: linear-gradient(135deg,#1f2937 0%, #374151 100%); border-color: rgba(255,255,255,0.04); }
+.icon-box.git { background: linear-gradient(135deg,#F05032 0%, #C62D1F 100%); }
+.icon-box.docker { background: linear-gradient(135deg,#0db7ed 0%, #2a9df4 100%); }
+.icon-box.node { background: linear-gradient(135deg,#3c873a 0%, #67a54a 100%); }
+.icon-box.npm { background: linear-gradient(135deg,#cb3837 0%, #e44b45 100%); }
+.icon-box.eslint { background: linear-gradient(135deg,#4b32c3 0%, #7b5cf6 100%); }
+.icon-box.figma { background: linear-gradient(135deg,#f24e1e 0%, #ff7262 50%, #a259ff 100%); }
+.icon-box.react { background: linear-gradient(135deg,#61dafb 0%, #2bb0e6 100%); border-color: rgba(97,218,251,0.18); }
+.icon-box.typescript { background: linear-gradient(135deg,#007acc 0%, #026aa7 100%); border-color: rgba(0,122,204,0.18); }
+.icon-box.tailwind { background: linear-gradient(135deg,#38b2ac 0%, #06b6d4 100%); border-color: rgba(6,182,212,0.16); }
+.icon-box.jetbrains { background: linear-gradient(135deg,#111827 0%, #111111 100%); border-color: rgba(255,255,255,0.04); }
+.icon-box.prettier { background: linear-gradient(135deg,#f7a8b8 0%, #ff7aa2 100%); border-color: rgba(255,122,140,0.12); }
+.icon-box.webpack { background: linear-gradient(135deg,#8ed6ff 0%, #6bb8ff 100%); border-color: rgba(110,180,255,0.12); }
+.icon-box.babel { background: linear-gradient(135deg,#f7df1e 0%, #ffd54a 100%); border-color: rgba(255,215,74,0.14); }
+
+/* Card Notes Section */
+.card-notes-section {
+  position: relative;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.note {
+  width: 200px;
+  height: 240px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.note-1 {
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+  transform: rotate(-8deg) translateX(-20px);
+  z-index: 2;
+}
+
+.note-1::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.note-1::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.note-2 {
+  background: linear-gradient(135deg, #c084fc 0%, #f472b6 100%);
+  transform: rotate(8deg) translateX(20px);
+  z-index: 1;
+}
+
+.note-2::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.note-2::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  right: 40px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+/* Card Spotify Section */
+.card-spotify-section {
+  position: relative;
+  padding: 2rem 2rem 1rem;
+  min-height: 240px;
+}
+
+.spotify-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #1DB954;
+}
+
+.spotify-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.spotify-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.album-art {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  margin-top: 1rem;
+}
+
+.album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+  padding: 0 2rem 2rem;
+  margin-top: auto;
+}
+
+.card-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .blog-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 3rem 1rem;
+  }
+
+  .blog-title {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  .blog-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .card-icons-section {
+    padding: 2rem 1.5rem 1rem;
+  }
+
+  .icon-box {
+    width: 56px;
+    height: 56px;
+  }
+
+  .card-notes-section {
+    height: 240px;
+    padding: 1.5rem;
+  }
+
+  .note {
+    width: 160px;
+    height: 200px;
+  }
+
+  .card-spotify-section {
+    padding: 1.5rem;
+  }
+
+  .album-art {
+    width: 150px;
+    height: 150px;
+  }
+
+  .card-content {
+    padding: 0 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+  }
+
+  .card-icons-section {
+    gap: 0.75rem;
+    padding: 1.5rem 1rem 0.75rem;
+  }
+
+  .icon-box {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .card-notes-section {
+    height: 200px;
+  }
+
+  .note {
+    width: 130px;
+    height: 160px;
+  }
+
+  .album-art {
+    width: 130px;
+    height: 130px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.8rem;
+  }
+}

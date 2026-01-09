@@ -1,0 +1,349 @@
+.about-page {
+  padding: 7rem 10rem;
+  position: relative;
+  background: linear-gradient(180deg, 
+    rgba(10, 10, 10, 0.6) 0%, 
+    rgba(20, 20, 30, 0.65) 50%, 
+    rgba(10, 10, 10, 0.6) 100%);
+}
+
+.about-container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.about-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.highlight-text {
+  font-style: italic;
+  background: linear-gradient(45deg, #ff006e, #8338ec);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.about-description p {
+  color: #cccccc;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cccccc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
+}
+
+.work-experience-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #cccccc;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.work-experience-link:hover {
+  color: #ffffff;
+}
+
+.work-experience-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+.work-experience-link .arrow {
+  color: #ff006e;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.about-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-3d {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, 
+    rgba(131, 56, 236, 0.2) 0%, 
+    rgba(255, 0, 110, 0.2) 50%, 
+    rgba(58, 134, 255, 0.2) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.logo-3d::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.logo-ab {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  z-index: 1;
+  position: relative;
+}
+
+.skills-banner {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6, #8b5cf6, #ec4899, #f59e0b);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transform: rotate(-3deg);
+  margin-top: 2rem;
+}
+
+.skills-banner-shadow {
+  transform: rotate(3deg);
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6, #8b5cf6, #ec4899, #f59e0b);
+  opacity: 0.35;
+  filter: blur(0.5px);
+  margin-top: -8rem;
+  margin-bottom: 0rem;
+  height: 80px;
+}
+
+.banner-text {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  white-space: nowrap;
+  animation: scrollText 20s linear infinite;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.application-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px; 
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .about-visual {
+    order: -1;
+  }
+  
+  .logo-container {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .logo-3d {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .logo-ab {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 2rem 1rem;
+  }
+  
+  .about-content {
+    gap: 2rem;
+  }
+  
+  .about-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-description {
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .social-links {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .work-experience-link {
+    justify-content: center;
+  }
+  
+  .logo-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .logo-3d {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .logo-ab {
+    font-size: 3rem;
+  }
+  
+  .banner-text {
+    font-size: 1.2rem;
+  }
+  
+  .skills-banner {
+    transform: rotate(-1deg);
+    padding: 1.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .about-title {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+  }
+  
+  .about-description p {
+    font-size: 0.95rem;
+  }
+  
+  .social-links {
+    gap: 0.8rem;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .social-link svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .logo-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .logo-3d {
+    width: 130px;
+    height: 130px;
+    border-radius: 20px;
+  }
+  
+  .logo-ab {
+    font-size: 2.5rem;
+  }
+  
+  .banner-text {
+    font-size: 1rem;
+  }
+}
